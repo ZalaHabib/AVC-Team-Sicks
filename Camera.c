@@ -10,9 +10,9 @@ int main(){
     //This sets up the RPi hardware and ensures 
     //everything is working correctly
     init(0);
-    //Initialises variables for finding colour of pixel
-    //and the running total
-    long total;
+    //Initialises variables for finding colour of pixel, the running total, and the number of white pixels for averaging
+    long total = 0;
+    int white = 0;
     char c;
     //Takes picture to analyse
     take_picture();
@@ -25,8 +25,13 @@ int main(){
           //If pixel is white, add to total
           if(c>128){
 	  total = total + (x-160);
+	  white++;
 	};
        };
+    //Find average if white pixels were present
+    if(white>0){
+    	total=total/white;
+    };
     //Print total
     printf("\n%d\n",total);
 return 0;}
