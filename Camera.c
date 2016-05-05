@@ -12,7 +12,7 @@ int main(){
     init(0);
     //Initialises variables for finding colour of pixel
     //and the running total
-    int total;
+    long total;
     char c;
     //Takes picture to analyse
     take_picture();
@@ -24,7 +24,7 @@ int main(){
           printf("%d\n",c); 
           //If pixel is white, add to total
           if(c>128){
-	  total = total + (x-320);
+	  total = total + (x-160);
 	};
        };
     //Print total
