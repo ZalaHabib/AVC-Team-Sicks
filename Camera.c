@@ -13,17 +13,17 @@ int main(){
     //Initialises variables for finding colour of pixel, the running total, and the number of white pixels for averaging
     long total = 0;
     int white = 0;
-    char c;
+    int pixel;
     //Takes picture to analyse
     take_picture();
     for(y=115,y<125,y++){
        for(x=0,x<320,x++){
 	  //Read pixel
-          c = get_pixel(x,y,3);
+          pixel = get_pixel(x,y,3);
 	  //Print value for debugging purposes
-          printf("%d\n",c); 
+          printf("%d\n",pixel); 
           //If pixel is white, add to total
-          if(c>128){
+          if(pixel>128){
 	  total = total + (x-160);
 	  white++;
 	};
