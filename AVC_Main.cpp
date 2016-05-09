@@ -19,6 +19,11 @@ float ki = 0; //integration error constant
 int prev_error = 0; //previous error signal for derivation
 int total_error = 0; //total error signal for integration
 
+
+int main(){
+}
+
+
 int open_gate (){
   connect_to_server(130.195.6.196, 1024);
   send_to_server("Please");
@@ -63,3 +68,4 @@ int cam_error(){
   int_error = total_error*ki; //Find integration error
   pid_sum = prop_error+der_error+int_error; //Find sum error
 return pid_sum;}
+
