@@ -8,11 +8,18 @@ Checklist:
 - [ ] Ian: Design an update for the robot
 - [ ] Zala: Test robot to run through the first and second progress, update github with progress
 - [ ] James: Assist with robot design and organize meetup
+Progress:
+* Tested code for gate
+* Designed battery stand in CAD
+* Encountered issue making individual files for each method, decided to compromise and put entire program on one file.
+* Set up weekly blog
+* Testing straight line movement code - encountered errors
+* Testing camera code
 
 #Week 3 
 Checklist:
 - [x] Tim and Cam: Finish code forrobot to clear first quadrant 
-- [ ] Ian: Have robot built to be able to clear first quadrant
+- [x] Ian: Have robot built to be able to clear first quadrant
 - [x] Zala: Start AVC progress updates, test robot to finish first quadrant, update github with progress
 - [x] James: Plan meetings, create goals for next few weeks
 Progress:
