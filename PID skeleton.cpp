@@ -82,4 +82,4 @@ int[5] cam_error(int[5] error_array){
   error_array[2] = error_array[2] + error_array[3]; //Update total error for integration
   error_array[5] = error_array[2]*ki; //Find integration error
   error_array[0] = error_array[3]+error_array[4]+error_array[5]; //Find sum error
-return 0;}
+return error_array;}
