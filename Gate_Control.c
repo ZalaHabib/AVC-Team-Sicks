@@ -9,6 +9,8 @@ extern "C" int receive_from_server(char message[24]);
 int main (){
 init(0);
 connect_to_server(130.195.6.196, 1024);
-char message[24] = send_to_server("Please");
+send_to_server("Please");
+char message[24];
+receive_from_server(message);
 send_to_server(message);
 return 0;}
