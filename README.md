@@ -27,6 +27,10 @@ Progress:
 * Wrote code for camera
 * Wrote code for individual wheel movement
 * Made goals for Week 4
+* Updated chassis:
+
+  ![Photo](http://i.imgur.com/qveuwcO.jpg?1)
+  ![Photo](http://i.imgur.com/rxuQ29B.jpg?1)
 
 #Week 2 
 Checklist:
