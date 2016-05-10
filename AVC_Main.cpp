@@ -28,7 +28,7 @@ int main(){
     turn(error);
     Sleep(0,2);
   }
-}
+return 0;}
 
 
 int open_gate (){
@@ -81,4 +81,4 @@ int turn(int error){
   int right_turn = ((-error/160)*127)+127;
   set_motor(1,left_turn);
   set_motor(2,right_turn);
-}
+return 0;}
