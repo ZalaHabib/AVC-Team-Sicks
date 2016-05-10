@@ -12,6 +12,8 @@ extern "C" int receive_from_server(char message[24]);
 extern "C" int take_picture();
 extern "C" char get_pixel(int row,int col,int colour);
 
+extern "C" int set_motor(int motor , int speed );
+
 
 float kp = 0; //proportional error constant
 float kd = 0; //derivative error constant
@@ -21,6 +23,11 @@ int total_error = 0; //total error signal for integration
 
 
 int main(){
+  while(true){
+    int error = cam_error();
+    turn(error);
+    Sleep(0,2);
+  }
 }
 
 
@@ -69,3 +76,9 @@ int cam_error(){
   pid_sum = prop_error+der_error+int_error; //Find sum error
 return pid_sum;}
 
+int turn(int error){
+  int left_turn = ((error/160)*127)+127;
+  int right_turn = ((-error/160)*127)+127;
+  set_motor(1,left_turn);
+  set_motor(2,right_turn);
+}
