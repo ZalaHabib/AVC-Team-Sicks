@@ -1,13 +1,18 @@
 # AVC-Teem-Sicks
 Progress upates and goals for AVC
 
+#Week 5
+- [ ] Tim and Cam: Get PID fully functional
+- [ ] Ian: Finalize robot structure
+- [ ] Zala: Test robot to run through first and second quadrant, sketch robot designs
+- [ ] Jimmy: Finalize part designs and print them off
+
 #Week 4 
 Checklist:
 - [ ] Tim and Cam: Implement error signals to allow to navigate corner tape
-- [ ] Tim and Cam: Write reverse code for robot
-- [ ] Ian: Design an update for the robot
-- [ ] Zala: Test robot to run through the first and second progress, update github with progress
-- [ ] James: Assist with robot design and organize meetup
+- [x] Ian: Design an update for the robot
+- [x] Zala: ~~Test robot to run through the first and second progress~~(not possible due to unfinished robot), update github with progress, help with design
+- [x] James: Assist with robot design and organize meetup
 Progress:
 * Tested code for gate
 * Designed battery stand in CAD
@@ -15,6 +20,9 @@ Progress:
 * Set up weekly blog
 * Testing straight line movement code - encountered errors
 * Testing camera code
+* Fixed motor wires
+* Designed new robot
+* Testing straight line movement code - fully functional
 
 #Week 3 
 Checklist:
