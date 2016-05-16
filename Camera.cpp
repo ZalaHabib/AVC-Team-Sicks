@@ -6,6 +6,7 @@ extern "C" int init(int d_lev);
 extern "C" int Sleep(int sec, int usec);
 extern "C" int take_picture();
 extern "C" char get_pixel(int row,int col,int colour);
+int cam_error();
 
 float kp = 0; //proportional error constant
 float kd = 0; //derivative error constant
