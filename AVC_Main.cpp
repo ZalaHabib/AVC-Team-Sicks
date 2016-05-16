@@ -14,6 +14,9 @@ extern "C" char get_pixel(int row,int col,int colour);
 
 extern "C" int set_motor(int motor , int speed );
 
+int open_gate();
+int cam_error();
+int turn(int error);
 
 float kp = 0; //proportional error constant
 float kd = 0; //derivative error constant
