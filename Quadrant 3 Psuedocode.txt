@@ -1,6 +1,25 @@
-Take Picture;
-Check if there is a white line to the left, if so, turn left;
-Check if path straight, if so, move foward;
-Check if path to the right, if so, go right;
-If no path ahead, turn around;
-Repeat;
+while(true){
+	take_picture();
+	if(at intersection){
+		If(there is a white line to the left){
+			turn left;
+		}
+		else if(path straight){
+			move forward;
+		}
+		else{
+			turn right;
+		}
+	}
+	else if(no path ahead){
+		If(walls ahead){
+			switch to quadrant 4 functionality;
+		else{
+			turn around;
+		}
+	}
+	else{
+		move forward;
+	}
+} 
+
