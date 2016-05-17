@@ -14,24 +14,11 @@ extern "C" char get_pixel(int row,int col,int colour);
 
 extern "C" int set_motor(int motor , int speed );
 
-int open_gate();
-int cam_error();
-int turn(int error);
-
 float kp = 0; //proportional error constant
 float kd = 0; //derivative error constant
 float ki = 0; //integration error constant 
 int prev_error = 0; //previous error signal for derivation
 int total_error = 0; //total error signal for integration
-
-
-int main(){
-  while(true){
-    int error = cam_error();
-    turn(error);
-    Sleep(0,2);
-  }
-return 0;}
 
 
 int open_gate (){
@@ -41,6 +28,7 @@ int open_gate (){
   receive_from_server(message);
   send_to_server(message);
 return 0;}
+
 
 int cam_error(){
   //Initialises variables for finding colour of pixel, the running total, and the number of white pixels for averaging
@@ -72,16 +60,27 @@ int cam_error(){
   int pid_sum; //Declares sum error variable
   int int_error; //Declares integral error variable
   int prop_error = total*kp; //Find proportional error
-  int der_error = ((prop_error-error_array[1])*0.2)*kd; //Find derivative error (assume camera check is every 2 seconds)
+  int der_error = ((prop_error-error_array[1])*0.1)*kd; //Find derivative error (assume camera check is every 2 seconds)
   prev_error = prop_error; //Update previous error for next iteration
   total_error = total_error + prop_error; //Update total error for integration
   int_error = total_error*ki; //Find integration error
   pid_sum = prop_error+der_error+int_error; //Find sum error
 return pid_sum;}
 
+
 int turn(int error){
-  int left_turn = ((error/160)*127)+127;
-  int right_turn = ((-error/160)*127)+127;
+  int left_turn = ((-error/160)*220)-30;
+  int right_turn = ((-error/160)*220)+30;
   set_motor(1,left_turn);
   set_motor(2,right_turn);
+return 0;}
+
+
+int main(){
+  init(1);
+  for (int i = 0; i<120;i++){
+    int error = cam_error();
+    turn(error);
+    Sleep(0,1);
+  }
 return 0;}
