@@ -69,10 +69,10 @@ return pid_sum;}
 
 
 int turn(int error){
-  int left_turn = ((-error/160)*220)-30;
-  int right_turn = ((-error/160)*220)+30;
-  set_motor(1,left_turn);
-  set_motor(2,right_turn);
+  int left_wheel = ((-error/160)*220)-30;
+  int right_wheel = ((-error/160)*220)+30;
+  set_motor(1,left_wheel);
+  set_motor(2,right_wheel);
 return 0;}
 
 
