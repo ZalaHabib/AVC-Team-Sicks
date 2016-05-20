@@ -6,10 +6,16 @@ Progress upates and goals for AVC
 - [ ] Ian: Finalize robot structure
 - [ ] Zala: Test robot to run through first and second quadrant, sketch robot designs
 - [ ] Jimmy: Finalize part designs and print them off
+Progress:
+* Tested robot #1
+* Working on turning code - failed so far
+* Rebuilt robot vertically
+* Tested robot #2
+* Fixed wheels turning in opposite directions
 
 #Week 4 
 Checklist:
-- [ ] Tim and Cam: Implement error signals to allow to navigate corner tape
+- [x] Tim and Cam: Implement error signals to allow to navigate corner tape
 - [x] Ian: Design an update for the robot
 - [x] Zala: ~~Test robot to run through the first and second progress~~(not possible due to unfinished robot), update github with progress, help with design
 - [x] James: Assist with robot design and organize meetup
