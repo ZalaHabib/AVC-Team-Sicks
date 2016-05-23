@@ -96,8 +96,7 @@ int Q3(){
     }
     set_motor(1,left_wheel);
     set_motor(2,right_wheel);
-    };
-}
+  };
   else{
     set_motor(1,-50);
     set_motor(2,50);
