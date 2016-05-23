@@ -73,7 +73,7 @@ int Q3(){
     total=total/white;
     //Print total
     printf("%s", "Base error value: ");
-    printf("%d\n",total);
+    printf("%f\n",total);
   
     //Perform PID
     double pid_sum; //Declares sum error variable
