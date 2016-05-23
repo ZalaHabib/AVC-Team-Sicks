@@ -12,13 +12,13 @@ extern "C" int set_motor(int motor , int speed );
 float kp = 0; //proportional error constant
 float kd = 0; //derivative error constant
 float ki = 0; //integration error constant 
-int prev_error = 0; //previous error signal for derivation
-int total_error = 0; //total error signal for integration
+double prev_error = 0; //previous error signal for derivation
+double total_error = 0; //total error signal for integration
 
 
 int Q3(){
   //Initialises variables for finding colour of pixel, the running total, and the number of white pixels for averaging
-  long total = 0;
+  double total = 0;
   int white;
   int left_white = 0;
   int right_white=0;
@@ -76,16 +76,16 @@ int Q3(){
     printf("%d\n",total);
   
     //Perform PID
-    int pid_sum; //Declares sum error variable
-    int int_error; //Declares integral error variable
-    int prop_error = total*kp; //Find proportional error
-    int der_error = ((prop_error-error_array[1])*0.1)*kd; //Find derivative error (assume camera check is every 2 seconds)
+    double pid_sum; //Declares sum error variable
+    double int_error; //Declares integral error variable
+    double prop_error = total*kp; //Find proportional error
+    double der_error = ((prop_error-error_array[1])*0.1)*kd; //Find derivative error (assume camera check is every 2 seconds)
     prev_error = prop_error; //Update previous error for next iteration
     total_error = total_error + prop_error; //Update total error for integration
     int_error = total_error*ki; //Find integration error
     pid_sum = prop_error+der_error+int_error; //Find sum error
-    int left_wheel=0;
-    int right_wheel=0;
+    double left_wheel=0;
+    double right_wheel=0;
     if(error>0){
       left_wheel=((error/160)*50)+50;
       right_wheel=((-error/160)*300)+50;
