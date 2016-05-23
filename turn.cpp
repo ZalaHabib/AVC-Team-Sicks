@@ -1,4 +1,4 @@
-int turn(int error){
+int turn(double error){
   int left_wheel=0;
   int right_wheel=0;
   if(white<1){
