@@ -1,0 +1,8 @@
+Tests
+
+kp=0.2: Oscillations
+kp=0.3: Way too much
+kp=0.2,kd=0.1: Still oscillating
+kp=0.2, kd=0.15: Less oscillations – Current PID values
+kp=0.2, kd=0.2: more oscillations
+kp=0.2, kd=0.15, ki=0.01: more oscillations than without integration. Not going to worry about it
