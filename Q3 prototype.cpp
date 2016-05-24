@@ -49,7 +49,7 @@ int Q3test(){
   //Find amount of horizontal white pixels for average if not at intersection
   white = left_white+right_white;
   //Check if straight path ahead
-  for(int y=0;y<120;y++){
+  for(int y=0;y<240;y++){
     //Read pixel
     pixel = get_pixel(160,y,3);
     //If pixel is white, add to total
@@ -58,12 +58,12 @@ int Q3test(){
       };
     };
   //Check if at intersection and act accordingly
-  if((left_white>145 && straight_white>105) || (left_white>145 && right_white>145)){
+  if((left_white>145 && straight_white>120) || (left_white>145 && right_white>145)){
     set_motor(1,-50);
     set_motor(2,50);
     Sleep(0,50000);
   }
-  else if(straight_white>105&&right_white>145){
+  else if(straight_white>120&&right_white>145){
     set_motor(1,50);
     set_motor(2,50);
     Sleep(0,50000);
