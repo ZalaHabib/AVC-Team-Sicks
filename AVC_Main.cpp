@@ -7,8 +7,8 @@ extern "C" int Sleep(int sec, int usec);
 extern "C" int connect_to_server( char server_addr[15],int port);
 extern "C" int send_to_server(char message[24]);
 extern "C" int receive_from_server(char message[24]);
-extern "C" int open_screen_stream();
 
+extern "C" int open_screen_stream();
 extern "C" int take_picture();
 extern "C" char get_pixel(int row,int col,int colour);
 
@@ -20,20 +20,17 @@ float kd = 0.05; //derivative error constant
 float ki = 0; //integration error constant
 int prev_error = 0; //previous error signal for derivation
 int total_error = 0; //total error signal for integration
-int white;
+int white; //Value to keep track of white pixels
 
 int open_gate(){
-  //printf("Opening Gate");
   connect_to_server("130.195.6.196", 1024);
   send_to_server("Please");
   char message[24];
   receive_from_server(message);
   send_to_server(message);
-  //printf("Gate Hopefully Opened");
 return 0;}
 
 int cam_error(){
-  //printf("Initialising Camera");
   //Initialises variables for finding colour of pixel, the running total, and the number of white pixels for averaging
   long total = 0;
   white = 0;
@@ -60,7 +57,6 @@ int cam_error(){
   printf("%d\n",total);
 
   //Perform PID
-  //printf("Begin PID");
   int pid_sum; //Declares sum error variable
   int int_error; //Declares integral error variable
   int prop_error = total*kp; //Find proportional error
@@ -69,7 +65,6 @@ int cam_error(){
   total_error = total_error + prop_error; //Update total error for integration
   int_error = total_error*ki; //Find integration error
   pid_sum = prop_error+der_error+int_error; //Find sum error
-  //printf("End PID");
 return pid_sum;}
 
 int turn(double error){
@@ -82,10 +77,12 @@ int turn(double error){
   }
   else{
     if(error>0){
+      //Turning right
       left_wheel=((error/160)*200)+left_wheel;
       right_wheel=((-error/160)*250)+right_wheel;
     }
     else{
+      //Turning Left
       left_wheel=((error/160)*250)+left_wheel;
       right_wheel=((-error/160)*200)+right_wheel;
     };
@@ -95,8 +92,7 @@ int turn(double error){
 return 0;}
 
 int main(){
-  init(1);
-  open_screen_stream();
+  init(1); //Initialises Pi
   for(int i = 0;i<400;i++){
     int error = cam_error();
     turn(error);
