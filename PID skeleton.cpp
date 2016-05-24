@@ -48,7 +48,7 @@ int cam_error(){
   int pid_sum; //Declares sum error variable 
   int int_error; //Declares integral error variable 
   int prop_error = total*kp; //Find proportional error 
-  int der_error = ((prop_error-error_array[1])*0.2)*kd; //Find derivative error (assume camera check is every 2 seconds) 
+  int der_error = ((prop_error-error_array[1])/0.2)*kd; //Find derivative error (assume camera check is every 2 seconds) 
   prev_error = prop_error; //Update previous error for next iteration 
   total_error = total_error + prop_error; //Update total error for integration 
   int_error = total_error*ki; //Find integration error 
