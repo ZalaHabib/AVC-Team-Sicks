@@ -11,6 +11,9 @@ Progress:
 * PID started working
 * Fixed opposite turning wheels
 * Got robot to successfully navigate quadrant 1 and 2 (fast)
+* Tested code for quadrant 3, power supply cable broke and halted testing
+* Mounted front sensor
+* Wrote code for quadrant 3 and 4(yet to be tested)
 
 #Week 5
 - [x] Tim and Cam: ~~Get PID fully functional~~, get movement code working
