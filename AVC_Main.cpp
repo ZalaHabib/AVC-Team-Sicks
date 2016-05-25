@@ -21,6 +21,7 @@ float ki = 0; //integration error constant
 int prev_error = 0; //previous error signal for derivation
 int total_error = 0; //total error signal for integration
 int white; //Value to keep track of white pixels
+int left_white; //Value to keep track of white pixels in the left of the image
 
 int open_gate(){
   connect_to_server("130.195.6.196", 1024);
@@ -34,6 +35,7 @@ int cam_error(){
   //Initialises variables for finding colour of pixel, the running total, and the number of white pixels for averaging
   long total = 0;
   white = 0;
+  left_white=0;
   int pixel;
   //Takes picture to analyse
   take_picture();
@@ -45,9 +47,12 @@ int cam_error(){
       if(pixel>128){
         total = total + (x-160);
         white++;
+        if(x<160||y=120){
+          left_white=left_white+1;
         };
       };
     };
+  };
   //Find average if white pixels were present
   if(white>0){
     total=total/white;
@@ -72,8 +77,16 @@ int turn(double error){
   double left_wheel=60;
   double right_wheel=60;
   if(white<1){
-    left_wheel=-50;
-    right_wheel=-50;
+    if(prev_error>0)
+      //If path was lost and was last to the left, turn left sharply
+      left_wheel=-50;
+      right_wheel=50;
+    }
+    else{
+      //If path was lost and was last to right, turn right sharply
+      left_wheel=50;
+      right_wheel=-50;
+    };
   }
   else{
     if(error>0){
@@ -95,9 +108,16 @@ int main(){
   init(1); //Initialises Pi
   for(int i = 0;i<400;i++){
     int error = cam_error();
-    turn(error);
-    Sleep(0,50000);
-  }
+    if(left_white>140){
+      set_motor(1,-40);
+      set_motor(2,40);
+      Sleep(0,500000);
+    }
+    else{
+      turn(error);
+      Sleep(0,50000);
+    };
+  };
   set_motor(1,0);
   set_motor(2,0);
 return 0;}
