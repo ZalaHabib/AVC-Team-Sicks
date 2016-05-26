@@ -55,8 +55,8 @@ int main(){
     set_motor(1,initial_speed_left);
     set_motor(2,initial_speed_right);
     left_reading = read_analog(1);
-    centre_reading = read_analog(2);
-    front_reading = read_analog(3);
+    centre_reading = read_analog(0);
+    right_reading = read_analog(2);
 
 //two methods below could be substitued for PID
 
