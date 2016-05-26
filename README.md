@@ -14,6 +14,7 @@ Progress:
 * Tested code for quadrant 3, power supply cable broke and halted testing
 * Mounted front sensor
 * Wrote code for quadrant 3 and 4(yet to be tested)
+* Fixed power supply cable
 
 #Week 5
 - [x] Tim and Cam: ~~Get PID fully functional~~, get movement code working
