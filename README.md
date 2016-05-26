@@ -15,6 +15,7 @@ Progress:
 * Mounted front sensor
 * Wrote code for quadrant 3 and 4(yet to be tested)
 * Fixed power supply cable
+* Implimented sensors onto Pi
 
 #Week 5
 - [x] Tim and Cam: ~~Get PID fully functional~~, get movement code working
