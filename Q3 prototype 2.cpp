@@ -44,7 +44,7 @@ int Q3test(){
       };
     };
   };
-  //Check if at intersection and act accordingly
+  //Check if path to left exists, if so, turn left
   if(left_white>140){
     set_motor(1,50);
     set_motor(2,50);
@@ -69,7 +69,7 @@ int Q3test(){
       };
       Sleep(0,50000);
     }
-  //Find average if white pixels were present
+  //If white pixels are found ahead, perform PID
   else if(white>0){
     total=total/white;
     //Print total
@@ -98,6 +98,7 @@ int Q3test(){
     set_motor(1,left_wheel);
     set_motor(2,right_wheel);
   }
+  //If path lost, turn right
   else{
     set_motor(1,50);
     set_motor(2,-50);
