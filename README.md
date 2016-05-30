@@ -10,7 +10,7 @@ Progress:
 * 
 
 #Week 6
-- [ x] Tim and Cam: ~~Quadrant 3 code~~, get PID fully functional, ~~Quadrant 4 code~~
+- [x] Tim and Cam: ~~Quadrant 3 code~~, get PID fully functional, ~~Quadrant 4 code~~
 - [x] Ian: Print off designs and apply
 - [x] Zala: ~~Finish design sketches~~, photograph components
 - [x] James: Get 3D printed designs finished, research components
