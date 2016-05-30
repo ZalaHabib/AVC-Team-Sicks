@@ -61,12 +61,13 @@ int Q3test(){
          pixel = get_pixel(x,y,3);
           //If pixel is white, add to total
           if(pixel>128){
-            total = total + (x-160);
+            error = error + (x-160);
             white++;
             };
           };
         };
       };
+      error=error/160;
       Sleep(0,50000);
     }
   //If white pixels are found ahead, perform PID
