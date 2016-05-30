@@ -1,11 +1,19 @@
 # AVC-Teem-Sicks
 Progress upates and goals for AVC
 
+#Week 7
+- [ ] Tim and Cam: Finish quadrant 3 & quadrant 4 if possible
+- [ ] Ian: Maintenance, wire organization
+- [ ] Zala: Run final tests, document results, finish sketches
+- [ ] James: Clean up wires and design, attempt quadrant 4 code
+Progress:
+* 
+
 #Week 6
-- [ ] Tim and Cam: Quadrant 3 code, get PID fully functional, Quadrant 4 code
-- [ ] Ian: Print off designs and apply
-- [ ] Zala: Finish design sketches, photograph components
-- [ ] Jimmy: Get 3D printed designs finished, research components
+- [ x] Tim and Cam: ~~Quadrant 3 code~~, get PID fully functional, ~~Quadrant 4 code~~
+- [x] Ian: Print off designs and apply
+- [x] Zala: ~~Finish design sketches~~, photograph components
+- [x] James: Get 3D printed designs finished, research components
 Progress:
 * Fixed Quadrant 2 code
 * PID started working
@@ -21,7 +29,7 @@ Progress:
 - [x] Tim and Cam: ~~Get PID fully functional~~, get movement code working
 - [x] Ian: Finalize robot structure
 - [x] Zala: Test robot to run through first and second quadrant, ~~sketch robot designs~~
-- [x] Jimmy: Finalize part designs ~~and print them off~~
+- [x] James: Finalize part designs ~~and print them off~~
 Progress:
 * Tested robot #1
 * Working on turning code - failed so far
