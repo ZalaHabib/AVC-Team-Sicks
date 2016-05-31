@@ -11,7 +11,7 @@
     plan, including our goals for the coming weeks.
 
 
-Week 1 - Tim Foley:
+*Tim Foley:
 This week Cameron and I wrote 3 methods. The first method created was the gate control which connected to the gate and submitted the password in order to open the gate. The second method we created detected white pixels on a black background and outputted a number representative of where the white tape was. We based our code off of the code supplied in lectures. We also created a method to test the motors of our AV. In accordance with our goal for the week (to get our AV to move in a straight line) this method would turn on the motors for a few seconds and then turn them off. Unfortunately our AV was not built to the point that we could compile and test these methods so we uploaded them to git hub un-compiled. 
 
 
@@ -25,3 +25,8 @@ This week Cameron and I wrote 3 methods. The first method created was the gate c
     motors set up due to time constraints, and I have realised that the 
     motors weren’t in a state that they would be able to work anyway, due 
     to them missing a couple of wires.
+
+#Week 3:
+*Tim Foley:
+This week our AV was built up to the point that it was ready to be tested. We spent about half of our lab compiling and testing our code and the other half debugging and fixing our code. We were able to compile and initiate our gate control method which resulted in our first success. After a lot of confusion we managed to get our white tape detection method to compile and run successfully. We ran a few tests on this method until we were satisfied that the output was accurate and running without error. We attempted to compile and run our straight line code that we had written earlier. After a few tests and some modifications to the code we ran out of time and were not able to complete this method.
+
