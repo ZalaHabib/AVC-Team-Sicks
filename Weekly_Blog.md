@@ -10,6 +10,11 @@
     chassis done while Jimmy and I set up contacts, meetings and our AVC
     plan, including our goals for the coming weeks.
 
+
+Week 1 - Tim Foley:
+This week Cameron and I wrote 3 methods. The first method created was the gate control which connected to the gate and submitted the password in order to open the gate. The second method we created detected white pixels on a black background and outputted a number representative of where the white tape was. We based our code off of the code supplied in lectures. We also created a method to test the motors of our AV. In accordance with our goal for the week (to get our AV to move in a straight line) this method would turn on the motors for a few seconds and then turn them off. Unfortunately our AV was not built to the point that we could compile and test these methods so we uploaded them to git hub un-compiled. 
+
+
 #Week 2:
 * Ian Broadhurst:
     This week, most of the progress on the AVC was halted due to the 
