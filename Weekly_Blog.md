@@ -29,4 +29,7 @@
 #Week 3:
 * Tim Foley:
     This week our AV was built up to the point that it was ready to be tested. We spent about half of our lab compiling and testing our code and the other half debugging and fixing our code. We were able to compile and initiate our gate control method which resulted in our first success. After a lot of confusion we managed to get our white tape detection method to compile and run successfully. We ran a few tests on this method until we were satisfied that the output was accurate and running without error. We attempted to compile and run our straight line code that we had written earlier. After a few tests and some modifications to the code we ran out of time and were not able to complete this method.
+#Week 5:
+*Tim Foley:
+    This week we did not get much lab time as a result of overcrowding in the lab. The majority of the week was spent testing and attempting to fix the numerous bugs and problems we were experiencing. We made several adjustments to the code as we found our PI ignoring the track or turning to the right for no reason. Even after a lot of testing we could not find a resolution to the turning problem. Even in a straight line test we observed the AV swerve to the right. We managed to limit the right turn bias by adjusting the individual wheel speeds, but even this was not an ideal solution.
 
