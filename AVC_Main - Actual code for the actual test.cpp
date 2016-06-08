@@ -228,7 +228,7 @@ int main(){
     int error = cam_error();
     turn(error);
     Sleep(0,50000);
-    if(white>1550){
+    if(white>1200){
       while(true){
         Q3();
       };
