@@ -33,4 +33,6 @@
 #Week 5:
 * Tim Foley:
     This week we did not get much lab time as a result of overcrowding in the lab. The majority of the week was spent testing and attempting to fix the numerous bugs and problems we were experiencing. We made several adjustments to the code as we found our PI ignoring the track or turning to the right for no reason. Even after a lot of testing we could not find a resolution to the turning problem. Even in a straight line test we observed the AV swerve to the right. We managed to limit the right turn bias by adjusting the individual wheel speeds, but even this was not an ideal solution.
-
+#Week 7:
+* Tim Foley:
+    This week we discovered the origin of our turning woes. Throughout the entirety of this challenge we have been experiencing issues with our turning system. Our robot would turn right even when all code telling it to turn right was commented out. Somehow we managed to navigate the first 2 quadrants successfully even with this major issue, but it was a significant obstacle when it came to approaching the 3rd quadrant. Today (2 days before the assessment) we realised that our camera was on backwards. the day before the assesment we managed to debug jimmy's Q4 code so that it was functional enough to make it to the 80% mark. however on the day of assessment issues (such as unstable PID) with our AV emerged out of the blue and started causing problems. Despite these issues we managed to get 75% in the maze, losing 3 points for build quality, giving us a score of 72%.
