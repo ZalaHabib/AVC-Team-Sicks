@@ -23,17 +23,17 @@ int total_error = 0; //total error signal for integration
 int white;
 
 int open_gate(){
-  //printf("Opening Gate");
+  printf("Opening Gate");
   connect_to_server("130.195.6.196", 1024);
   send_to_server("Please");
   char message[24];
   receive_from_server(message);
   send_to_server(message);
-  //printf("Gate Hopefully Opened");
 return 0;}
 
 int cam_error(){
-  //printf("Initialising Camera");
+  //NB: Camera and wheels are both inverted horizontally
+  printf("Initialising Camera");
   //Initialises variables for finding colour of pixel, the running total, and the number of white pixels for averaging
   long total = 0;
   white = 0;
@@ -60,7 +60,7 @@ int cam_error(){
   printf("%d\n",total);
 
   //Perform PID
-  //printf("Begin PID");
+  printf("Begin PID");
   int pid_sum; //Declares sum error variable
   int int_error; //Declares integral error variable
   int prop_error = total*kp; //Find proportional error
@@ -69,26 +69,26 @@ int cam_error(){
   total_error = total_error + prop_error; //Update total error for integration
   int_error = total_error*ki; //Find integration error
   pid_sum = prop_error+der_error+int_error; //Find sum error
-  //printf("End PID");
 return pid_sum;}
 
 int turn(double error){
-  //Right wheel turns backwards
+  //NB: The camera and the wheels are both reversed horizontally
   double left_wheel=60;
   double right_wheel=60;
   if(white<1){
     if(prev_error>0){
-      //If path was lost and was last to the left, turn left sharply
+      //If path was lost and was last to right, turn right sharply
       left_wheel=-50;
       right_wheel=50;
     }
     else{
-      //If path was lost and was last to right, turn right sharply
+      //If path was lost and was last to the left, turn left sharply
       left_wheel=50;
       right_wheel=-50;
     };
   }
   else{
+    //The inner wheel has greater emphasis in order to sharpen turns
     if(error>0){
       left_wheel=((error/160)*200)+left_wheel;
       right_wheel=((-error/160)*250)+right_wheel;
@@ -102,8 +102,9 @@ int turn(double error){
   set_motor(2,right_wheel);
 return 0;}
 
-int Q3(){
-  //Initialises variables for finding colour of pixel, the running total, and the number of white pixels for averaging
+int Q3code(){
+  //Initialises variables for finding colour of pixel, the running total, the number of pixels to the left, and the number of white pixels for averaging
+  printf('Running Quadrant 3 code')
   double total = 0;
   int white=0;
   int left_white = 0;
@@ -133,16 +134,18 @@ int Q3(){
   };
   //Check if path to left exists, if so, turn left
   if(left_white>150){
-    printf("radishes");
+    //Drives the vehicle forward slightly so it turns at the intersection rather than just before it
     set_motor(1,50);
     set_motor(2,50);
     Sleep(0,700000);
+    //Instructs the vehicle to turn until it reaches a line
     set_motor(1,50);
     set_motor(2,-50);
     Sleep(0,700000);
     double error = 1;
     int error_white=0;
-    while(error==0){
+    while(error>0){
+      //Finds error signal in front of vehicle to check if it's at a line
       error = 0;
       error_white=0;
       take_picture();
@@ -191,14 +194,13 @@ int Q3(){
     set_motor(1,left_wheel);
     set_motor(2,right_wheel);
   }
-  //If path lost, turn right
+  //If path lost, turn right until a path is found
   else{
-    printf("turnips");
     set_motor(1,-50);
     set_motor(2,50);
-    double error = 1;
+    double error = -1;
     int error_white=0;
-    while(error>=0){
+    while(error<0){
       error = 0;
       error_white=0;
       take_picture();
@@ -221,24 +223,12 @@ return 0;}
 
 int main(){
   init(1);
-  for (int i = 0;1<300;i++){
-    printf("%d\n",i);
-    Q3test();
-    Sleep(0,50000);
-  }
-return 0;}
-
-int main(){
-  init(1);
   open_screen_stream();
   while(true){
     int error = cam_error();
     turn(error);
     Sleep(0,50000);
     if(white>1550){
-      set_motor(1,60);
-      set_motor(2,60);
-      Sleep(1,0);
       while(true){
         Q3();
       };
