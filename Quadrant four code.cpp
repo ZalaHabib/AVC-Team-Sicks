@@ -61,33 +61,33 @@ int main(){
 //two methods below could be substitued for PID
 
     if(left_reading>right_reading){
-      left_speed = 15;
-      set_motor(1,initial_speed_left + left_speed);
-      sleep(0,100000);
+      speed_left = 15;
+      set_motor(2,initial_speed_left + speed_left);
+      Sleep(0,100000);
     };
     if(left_reading<right_reading){
-      right_speed = 15;
-      set_motor(2,initial_speed_right + right_speed);
-      sleep(0,100000);
+      speed_right = 15;
+      set_motor(1,initial_speed_right + speed_right);
+      Sleep(0,100000);
     };
 
 //
 
-    if(right_reading > 400 && centre _reading > 400 && left_reading > 400){
-      set_motor(2,-initial_speed_right);
-      sleep(1,0);
+    if(right_reading > 400 && centre_reading > 400 && left_reading > 400){
+      set_motor(1,-initial_speed_right);
+      Sleep(1,0);
     };
     if(left_reading > 400 && centre_reading > 400){
-      set_motor(2,-initial_speed_right);
-      sleep(0,500000);
+      set_motor(1,-initial_speed_right);
+      Sleep(0,500000);
     };
-    if(right_reading > 400 && centre _reading > 400){
-      set_motor(1,-initial_speed_left);
-      sleep(0,500000);
+    if(right_reading > 400 && centre_reading > 400){
+      set_motor(2,-initial_speed_left);
+      Sleep(0,500000);
     };
     if(centre_reading > 400){
-      set_motor(2,-initial_speed_right);
-      sleep(0,500000);
+      set_motor(1,-initial_speed_right);
+      Sleep(0,500000);
     };
   };
-};
+return 0;};
