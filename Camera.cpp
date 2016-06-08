@@ -8,18 +8,12 @@ extern "C" int take_picture();
 extern "C" char get_pixel(int row,int col,int colour);
 int cam_error();
 
-float kp = 0; //proportional error constant
+float kp = 1; //proportional error constant
 float kd = 0; //derivative error constant
 float ki = 0; //integration error constant 
 int prev_error = 0; //previous error signal for derivation
 int total_error = 0; //total error signal for integration
 
-int main(){
-  for(int i = 0;i<5;i++){
-    int error = cam_error();
-    Sleep(0,2);
-  }
-return 0;}
 
 int cam_error(){
   //Initialises variables for finding colour of pixel, the running total, and the number of white pixels for averaging
@@ -51,7 +45,7 @@ int cam_error(){
   int pid_sum; //Declares sum error variable
   int int_error; //Declares integral error variable
   int prop_error = total*kp; //Find proportional error
-  int der_error = ((prop_error-error_array[1])*0.2)*kd; //Find derivative error (assume camera check is every 2 seconds)
+  int der_error = ((prop_error-prev_error)/0.2)*kd; //Find derivative error (assume camera check is every 2 seconds)
   prev_error = prop_error; //Update previous error for next iteration
   total_error = total_error + prop_error; //Update total error for integration
   int_error = total_error*ki; //Find integration error
@@ -69,3 +63,10 @@ int cam_error(){
   printf("%s", "Total error value: ");
   printf("%d\n\n",total_error);
 return pid_sum;}
+
+int main(){
+  for(int i = 0;i<5;i++){
+    int error = cam_error();
+    Sleep(0,2);
+  }
+return 0;}
