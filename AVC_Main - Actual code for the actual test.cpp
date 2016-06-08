@@ -32,7 +32,7 @@ int open_gate(){
 return 0;}
 
 int cam_error(){
-  //NB: Camera and wheels are both inverted horizontally
+  //NB: Camera is inverted
   printf("Initialising Camera");
   //Initialises variables for finding colour of pixel, the running total, and the number of white pixels for averaging
   long total = 0;
@@ -72,7 +72,7 @@ int cam_error(){
 return pid_sum;}
 
 int turn(double error){
-  //NB: The camera and the wheels are both reversed horizontally
+  //NB: The wheels are both reversed horizontally
   double left_wheel=60;
   double right_wheel=60;
   if(white<1){
