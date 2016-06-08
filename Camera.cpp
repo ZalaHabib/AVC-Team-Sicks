@@ -6,11 +6,10 @@ extern "C" int init(int d_lev);
 extern "C" int Sleep(int sec, int usec);
 extern "C" int take_picture();
 extern "C" char get_pixel(int row,int col,int colour);
-int cam_error();
 
 float kp = 1; //proportional error constant
-float kd = 0; //derivative error constant
-float ki = 0; //integration error constant 
+float kd = 0.2; //derivative error constant
+float ki = 0.1; //integration error constant 
 int prev_error = 0; //previous error signal for derivation
 int total_error = 0; //total error signal for integration
 
