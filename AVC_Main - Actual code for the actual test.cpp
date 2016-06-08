@@ -139,8 +139,8 @@ int Q3code(){
     set_motor(2,50);
     Sleep(0,700000);
     //Instructs the vehicle to turn until it reaches a line
-    set_motor(1,50);
-    set_motor(2,-50);
+    set_motor(1,55);
+    set_motor(2,-55);
     Sleep(0,700000);
     double error = 1;
     int error_white=0;
