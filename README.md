@@ -2,12 +2,14 @@
 Progress upates and goals for AVC
 
 #Week 7
-- [ ] Tim and Cam: Finish quadrant 3 & quadrant 4 if possible
-- [ ] Ian: Maintenance, wire organization
-- [ ] Zala: Run final tests, document results, finish sketches
-- [ ] James: Clean up wires and design, attempt quadrant 4 code
+- [x] Tim and Cam: Finish quadrant 3 & quadrant 4 if possible
+- [x] Ian: Maintenance, wire organization
+- [x] Zala: Run final tests, document results, finish sketches
+- [x] James: Clean up wires and design, attempt quadrant 4 code
 Progress:
-* 
+* Finished quadrant 3 code(without testing due to lab times)
+* Attempted quadrant 4 code(without testing)
+* Final robot assessment
 
 #Week 6
 - [x] Tim and Cam: ~~Quadrant 3 code~~, get PID fully functional, ~~Quadrant 4 code~~
