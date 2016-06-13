@@ -30,11 +30,17 @@
 * Tim Foley:
     This week our AV was built up to the point that it was ready to be tested. We spent about half of our lab compiling and testing our code and the other half debugging and fixing our code. We were able to compile and initiate our gate control method which resulted in our first success. After a lot of confusion we managed to get our white tape detection method to compile and run successfully. We ran a few tests on this method until we were satisfied that the output was accurate and running without error. We attempted to compile and run our straight line code that we had written earlier. After a few tests and some modifications to the code we ran out of time and were not able to complete this method.
 
+#Week 4:
+*James Barrett:
+    This week we really started to come together as a team and get some physical results. The original horizontal design of the PI robot was scrapped as we decided this long layout would Inhibit the robot's ability to navigate the enclosed environment of the maze. We struggled to get the code for the linear movement of the robot to drive the motors, but found that the issue lied in the attachment of the wires to the motor not the code. In response to this issue, Ian resoldered the wires to the motor. A lot of work was done implementing the github code onto the PI robot, and working with Arthur to help debug the code for moving the av along the line.
+
 #Week 5:
 * Tim Foley:
     This week we did not get much lab time as a result of overcrowding in the lab. The majority of the week was spent testing and attempting to fix the numerous bugs and problems we were experiencing. We made several adjustments to the code as we found our PI ignoring the track or turning to the right for no reason. Even after a lot of testing we could not find a resolution to the turning problem. Even in a straight line test we observed the AV swerve to the right. We managed to limit the right turn bias by adjusting the individual wheel speeds, but even this was not an ideal solution.
 
-* Cameron Hopkinson: We discovered that if you're using an integer in the process of declaring a double, the result will be rounded down which meant that the error signal was having no influence on the movement of the robot. After the code was fixed by making the error signal a double and we sorted out some mild confusion in regards to which wheel was which, it worked perfectly. We're still to properly implement PID but at this stage, it's handling the corners so smoothly that it might not even be necessary.
+#Week 6:
+* Cameron Hopkinson: 
+    We discovered that if you're using an integer in the process of declaring a double, the result will be rounded down which meant that the error signal was having no influence on the movement of the robot. After the code was fixed by making the error signal a double and we sorted out some mild confusion in regards to which wheel was which, it worked perfectly. We're still to properly implement PID but at this stage, it's handling the corners so smoothly that it might not even be necessary.
 
 #Week 7:
 * Tim Foley:
